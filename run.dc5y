@@ -1,0 +1,6 @@
+FROM florentbenoit/docker-static-serve-grunt
+
+ADD $app$ /tmp/userapp/
+RUN cd /tmp/userapp && \
+    cp -a /tmp/userapp/. /home/user/application/ && \
+    grunt serve
